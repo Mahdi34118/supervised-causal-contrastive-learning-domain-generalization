@@ -1,0 +1,36 @@
+
+################ Seed ################
+random_seed: true
+seed: 0
+report_prefix: "random"
+
+################ Report Path ################
+reports_path: "./reports/cmnist"
+
+################ Dataloader ################
+data_path: "./datasets/colored_mnist"
+corruption_ratio: 0.4
+batch_size: 32
+num_workers: 3
+
+################ Model ################
+# data encoder
+data_encoder_latent_dim: 20
+num_Zy: 2
+# data_encoder_tail_hidden_dims: [128, 40]
+# data_encoder_tail_activations: ["lrelu", "lrelu", "none"]
+
+# causal effect extractor
+cee_hidden_dims: [20, 8]
+cee_activations: ["relu", "relu", "none"]
+
+# Environment-Latent encoder
+#env_latent_encoder_output_dim: 1
+env_latent_encoder_hidden_dims: [20,10]
+env_latent_encoder_activations: ["relu", "relu","none"]
+
+################ Hyperparameters ################
+epochs: 2
+regularization_coef: 0.01
+lr: 0.005
+lr_scheduler: true
